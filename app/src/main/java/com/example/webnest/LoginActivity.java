@@ -37,15 +37,20 @@ public class LoginActivity extends AppCompatActivity {
         String email = emailET.getText().toString();
         String password = passwordET.getText().toString();
 
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Kérlek töltsd ki az email és a jelszó mezőket.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Log.d(LOG_TAG, "User logged in successfully");
+                    Log.d(LOG_TAG, "Felhasználó sikeresen bejelentkezett!");
                     startBrowsing();
                 } else {
-                    Log.d(LOG_TAG, "User wasn't logged in successfully:", task.getException());
-                    Toast.makeText(LoginActivity.this, "User wasn't logged in successfully:", Toast.LENGTH_LONG).show();
+                    Log.d(LOG_TAG, "Felhasználó sikertelen bejelentkezés:", task.getException());
+                    Toast.makeText(LoginActivity.this, "Felhasználó sikertelen bejelentkezés!", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -58,7 +63,6 @@ public class LoginActivity extends AppCompatActivity {
 
     public void register(View view) {
         Intent intent = new Intent(this, RegisterActivity.class);
-        intent.putExtra("SECRET_KEY", 99);
         startActivity(intent);
     }
 }

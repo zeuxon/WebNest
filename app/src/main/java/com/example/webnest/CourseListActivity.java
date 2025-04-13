@@ -29,9 +29,9 @@ public class CourseListActivity extends AppCompatActivity {
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-            Log.d(LOG_TAG, "Authenticated user!");
+            Log.d(LOG_TAG, "Autentikált felhasználó!");
         } else {
-            Log.d(LOG_TAG, "Not authenticated user!");
+            Log.d(LOG_TAG, "Nem autentikált felhasználó!");
             finish();
         }
 
