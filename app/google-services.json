@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "425710425524",
+    "project_id": "webnest-eec46",
+    "storage_bucket": "webnest-eec46.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425710425524:android:9156830b58fb2ce8968ee1",
+        "android_client_info": {
+          "package_name": "com.example.webnest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425710425524-ausso3h7pvd0ml6chhtba3f2a15m2bg8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.webnest",
+            "certificate_hash": "bdfe92147d82b95386f971aa5e7341bcfb061ab8"
+          }
+        },
+        {
+          "client_id": "425710425524-c6jh2358un6prsnmb9ha7qjatrkb49u4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2uf0X0TjSS1YGP_5Zidc2CG5n1TXeOYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "425710425524-c6jh2358un6prsnmb9ha7qjatrkb49u4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
