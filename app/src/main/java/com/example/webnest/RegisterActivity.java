@@ -30,9 +30,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     EditText userEmailEditText;
     EditText passwordEditText;
     EditText passwordConfirmEditText;
-    EditText phoneEditText;
-    Spinner spinner;
-    RadioGroup accountTypeGroup;
 
     private SharedPreferences preferences;
     private FirebaseAuth mAuth;
@@ -42,8 +39,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        // Bundle bundle = getIntent().getExtras();
-        // int secret_key = bundle.getInt("SECRET_KEY");
         int secret_key = getIntent().getIntExtra("SECRET_KEY", 0);
 
         if (secret_key != 99) {
@@ -54,24 +49,12 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         userEmailEditText = findViewById(R.id.userEmailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         passwordConfirmEditText = findViewById(R.id.passwordAgainEditText);
-        phoneEditText = findViewById(R.id.phoneEditText);
-        spinner = findViewById(R.id.phoneSpinner);
-        accountTypeGroup = findViewById(R.id.accountTypeGroup);
-        accountTypeGroup.check(R.id.buyer);
+
 
         preferences = getSharedPreferences(PREF_KEY, MODE_PRIVATE);
         String userName = preferences.getString("userName", "");
         String password = preferences.getString("password", "");
 
-        userNameEditText.setText(userName);
-        passwordEditText.setText(password);
-        passwordConfirmEditText.setText(password);
-
-        spinner.setOnItemSelectedListener(this);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.phone_labels, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -89,16 +72,9 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             return;
         }
 
-        String phone = phoneEditText.getText().toString();
-        String phoneType = spinner.getSelectedItem().toString();
 
-        int accountTypeId = accountTypeGroup.getCheckedRadioButtonId();
-        View radioButton = accountTypeGroup.findViewById(accountTypeId);
-        int id = accountTypeGroup.indexOfChild(radioButton);
-        String accountType =  ((RadioButton)accountTypeGroup.getChildAt(id)).getText().toString();
 
         Log.i(LOG_TAG, "Regisztrált: " + userName + ", e-mail: " + email);
-        // startShopping();
 
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {

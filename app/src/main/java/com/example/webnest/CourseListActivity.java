@@ -45,16 +45,16 @@ public class CourseListActivity extends AppCompatActivity {
 
     private List<Course> getCourses() {
         List<Course> courses = new ArrayList<>();
-        courses.add(new Course("HTML Course", "Learn the basics of HTML.", R.drawable.html));
-        courses.add(new Course("JavaScript Course", "Master JavaScript for web development.", R.drawable.javascript));
-        courses.add(new Course("CSS Course", "Style your websites with CSS.", R.drawable.css));
-        courses.add(new Course("Java Course", "Understand the fundamentals of Java programming.", R.drawable.java));
-        courses.add(new Course("Python Course", "Get started with Python programming.", R.drawable.python));
-        courses.add(new Course("Android Development", "Build Android apps using Java or Kotlin.", R.drawable.android));
-        courses.add(new Course("React Course", "Learn React for building modern web apps.", R.drawable.react));
-        courses.add(new Course("Node.js Course", "Develop backend applications with Node.js.", R.drawable.nodejs));
-        courses.add(new Course("SQL Course", "Manage databases with SQL.", R.drawable.sql));
-        courses.add(new Course("Git Course", "Version control your projects with Git.", R.drawable.git));
+        courses.add(new Course("HTML Kurzus", "Tanuld meg a HTML alapjait.", R.drawable.html));
+        courses.add(new Course("JavaScript Kurzus", "Sajátítsd el a JavaScriptet webfejlesztéshez.", R.drawable.javascript));
+        courses.add(new Course("CSS Kurzus", "Szépítsd weboldalaidat CSS segítségével.", R.drawable.css));
+        courses.add(new Course("Java Kurzus", "Ismerd meg a Java programozás alapjait.", R.drawable.java));
+        courses.add(new Course("Python Kurzus", "Kezdj el programozni Python nyelven.", R.drawable.python));
+        courses.add(new Course("Android Fejlesztés", "Készíts Android alkalmazásokat Java vagy Kotlin nyelven.", R.drawable.android));
+        courses.add(new Course("React Kurzus", "Tanuld meg a Reactet modern webalkalmazások készítéséhez.", R.drawable.react));
+        courses.add(new Course("Node.js Kurzus", "Fejlessz backend alkalmazásokat Node.js segítségével.", R.drawable.nodejs));
+        courses.add(new Course("SQL Kurzus", "Kezeld az adatbázisokat SQL segítségével.", R.drawable.sql));
+        courses.add(new Course("Git Kurzus", "Verziókezelés a projektjeidhez Git segítségével.", R.drawable.git));
         return courses;
     }
 
