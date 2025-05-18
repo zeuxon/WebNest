@@ -37,51 +37,54 @@
 
     <Button
         android:id="@+id/testAlarmButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Emlékeztető teszt"
-        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnResetCourses"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        app:layout_constraintHorizontal_chainStyle="spread_inside" />
 
     <Button
         android:id="@+id/btnResetCourses"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Összes kurzus mutatása"
-        app:layout_constraintStart_toEndOf="@+id/testAlarmButton"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/testAlarmButton"
-        app:layout_constraintBottom_toBottomOf="@+id/testAlarmButton" />
+        app:layout_constraintBottom_toBottomOf="@+id/testAlarmButton"
+        app:layout_constraintStart_toEndOf="@+id/testAlarmButton"
+        app:layout_constraintEnd_toStartOf="@+id/btnPaidCourses" />
 
     <Button
         android:id="@+id/btnPaidCourses"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Fizetős kurzusok (max 5, ár szerint növekvő)"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/testAlarmButton" />
+        android:text="Fizetős kurzusok (max 5)"
+        app:layout_constraintTop_toTopOf="@+id/testAlarmButton"
+        app:layout_constraintBottom_toBottomOf="@+id/testAlarmButton"
+        app:layout_constraintStart_toEndOf="@+id/btnResetCourses"
+        app:layout_constraintEnd_toStartOf="@+id/btnFreeCoursesPaged" />
 
     <Button
         android:id="@+id/btnFreeCoursesPaged"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Ingyenes kurzusok (10. után 5, név szerint csökkenő)"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPaidCourses" />
+        android:text="Ingyenes kurzusok"
+        app:layout_constraintTop_toTopOf="@+id/testAlarmButton"
+        app:layout_constraintBottom_toBottomOf="@+id/testAlarmButton"
+        app:layout_constraintStart_toEndOf="@+id/btnPaidCourses"
+        app:layout_constraintEnd_toStartOf="@+id/btnExpensiveCourses" />
 
     <Button
         android:id="@+id/btnExpensiveCourses"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Drága fizetős kurzusok (max 3, ár szerint csökkenő)"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFreeCoursesPaged" />
+        android:text="Drága fizetős kurzusok (max 3)"
+        app:layout_constraintTop_toTopOf="@+id/testAlarmButton"
+        app:layout_constraintBottom_toBottomOf="@+id/testAlarmButton"
+        app:layout_constraintStart_toEndOf="@+id/btnFreeCoursesPaged"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/courseRecyclerView"
@@ -90,6 +93,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnExpensiveCourses" />
+        app:layout_constraintTop_toBottomOf="@+id/testAlarmButton" /> <!-- Ensure RecyclerView is below the buttons -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

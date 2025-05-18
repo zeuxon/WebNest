@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editCourseTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kurzus címe" />
+
+    <EditText
+        android:id="@+id/editCourseDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Leírás"
+        android:layout_marginTop="8dp"/>
+
+    <EditText
+        android:id="@+id/editCourseMaterial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tananyag (szöveg)"
+        android:inputType="textMultiLine"
+        android:minLines="4"
+        android:layout_marginTop="8dp"/>
+
+    <RadioGroup
+        android:id="@+id/imageSourceRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <RadioButton
+            android:id="@+id/urlRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kép URL" />
+
+        <RadioButton
+            android:id="@+id/galleryRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Galéria" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/editCourseImageUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kép URL (https://...)"
+        android:layout_marginTop="8dp"
+        android:visibility="visible"/>
+
+    <Button
+        android:id="@+id/selectImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kép kiválasztása"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"/>
+
+    <CheckBox
+        android:id="@+id/paidCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fizetős kurzus?" />
+
+    <EditText
+        android:id="@+id/priceEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ár (Ft)"
+        android:inputType="number"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"/>
+</LinearLayout>

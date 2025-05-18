@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/adminCourseTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Kurzus címe"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/editCourseButton"
+        app:layout_constraintBottom_toTopOf="@id/adminCourseDescription"
+        android:layout_marginEnd="8dp"/>
+
+    <TextView
+        android:id="@+id/adminCourseDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Leírás"
+        app:layout_constraintTop_toBottomOf="@id/adminCourseTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/editCourseButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_menu_edit"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/deleteCourseButton"
+        app:layout_constraintBottom_toTopOf="@id/adminCourseDescription"
+        android:contentDescription="Szerkesztés"/>
+
+    <ImageButton
+        android:id="@+id/deleteCourseButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_menu_delete"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adminCourseDescription"
+        android:contentDescription="Törlés"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
